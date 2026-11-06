@@ -1,0 +1,74 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: #f4f5f7;
+  color: #222;
+}
+
+.container {
+  max-width: 680px;
+  margin: 40px auto;
+  padding: 0 16px;
+}
+
+header h1 { margin-bottom: 4px; }
+header p { margin-top: 0; color: #555; }
+
+#task-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: #fff;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,.08);
+}
+
+#task-form input,
+#task-form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font: inherit;
+}
+
+#task-form textarea { min-height: 70px; resize: vertical; }
+
+.form-buttons { display: flex; gap: 8px; }
+
+button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  background: #2563eb;
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+}
+button:hover { opacity: .9; }
+#task-cancel, .edit-task { background: #6b7280; }
+.delete-task { background: #dc2626; }
+.toggle-task { background: #16a34a; }
+
+#status-message { min-height: 1.4em; margin: 12px 0; }
+#status-message.error { color: #dc2626; }
+#status-message.success { color: #16a34a; }
+
+.task-item {
+  background: #fff;
+  padding: 14px 16px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,.08);
+}
+.task-item.completed .task-title { text-decoration: line-through; color: #888; }
+.task-title { margin: 0 0 6px; }
+.task-description { margin: 0 0 8px; color: #444; white-space: pre-wrap; }
+.task-status { font-size: .85em; color: #666; }
+.task-actions { display: flex; gap: 6px; margin-top: 10px; flex-wrap: wrap; }
+
+.empty { color: #777; }
+
+footer { margin-top: 24px; }
