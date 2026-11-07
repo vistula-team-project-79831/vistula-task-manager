@@ -1,5 +1,3 @@
-// Task Manager – Supabase REST API (fetch)
-
 let config = null;
 let editingId = null;
 
@@ -38,14 +36,13 @@ async function api(method, query = '', body = null) {
     try {
       const err = await response.json();
       details = err.message || details;
-    } catch (e) { /* ignore */ }
+    } catch (e) {}
     throw new Error(`${method} failed (${response.status}): ${details}`);
   }
   const text = await response.text();
   return text ? JSON.parse(text) : null;
 }
 
-// READ
 async function loadTasks() {
   try {
     const tasks = await api('GET', '?select=*&order=id.asc');
@@ -103,7 +100,6 @@ function renderTasks(tasks) {
   });
 }
 
-// CREATE / UPDATE
 form.addEventListener('submit', async (event) => {
   event.preventDefault();
   const title = titleInput.value.trim();
@@ -147,7 +143,6 @@ function resetForm() {
 
 cancelButton.addEventListener('click', resetForm);
 
-// TOGGLE
 async function toggleTask(task) {
   try {
     await api('PATCH', `?id=eq.${task.id}`, { completed: !task.completed });
@@ -158,7 +153,6 @@ async function toggleTask(task) {
   }
 }
 
-// DELETE
 async function deleteTask(id) {
   if (!confirm('Delete this task?')) return;
   try {
@@ -171,7 +165,6 @@ async function deleteTask(id) {
   }
 }
 
-// INIT
 async function init() {
   try {
     const response = await fetch('config.json');

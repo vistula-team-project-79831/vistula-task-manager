@@ -1,5 +1,3 @@
--- Supabase setup for Task Manager (demo database, test data only)
-
 create table if not exists public.tasks (
   id bigint generated always as identity primary key,
   title text not null,
