@@ -49,5 +49,5 @@ A simple Task Manager web application built with plain HTML, CSS and JavaScript,
 
 ## Team collaboration (Pull Requests)
 
-- My Pull Request to my partner's repository: _to be added_
-- My partner's Pull Request to this repository: _to be added_
+- My Pull Request to my partner's repository (merged): https://github.com/vistula-team-project-79836/vistula-task-manager/pull/1
+- My partner's Pull Request to this repository (merged): https://github.com/vistula-team-project-79831/vistula-task-manager/pull/1
